@@ -1,10 +1,5 @@
 require_relative 'boot'
-
 require 'rails/all'
-require 'csv'
-require 'JSON'
-require 'HTTParty'
-require 'Nokogiri'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
