@@ -23,7 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-
+gem 'json'
 group :development do
  gem 'web-console', '>= 3.3.0'
 gem 'listen', '~> 3.0.5'
