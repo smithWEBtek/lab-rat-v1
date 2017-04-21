@@ -1,0 +1,6 @@
+// $(function(){
+  var html = "<%= j(render(partial: 'contacts/contacts', locals: { contacts: @contacts })) %>";
+  var msg = "<h1>The contacts partial, brought to you by AJAX!!</h1>"
+  $("div#ajax-contacts").html(msg+html) 
+// })
+ 

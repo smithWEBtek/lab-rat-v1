@@ -1,0 +1,1858 @@
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-21 20:47:28 UTC], ["updated_at", 2017-04-21 20:47:28 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:52:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (17.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:52:13 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 1050ms (ActiveRecord: 0.0ms)
+
+
+  
+Completed 500 Internal Server Error in 3639ms (ActiveRecord: 0.0ms)
+
+
+ActionView::Template::Error (undefined local variable or method `jobs_path' for #<#<Class:0x007fdc7b1790a8>:0x007fdc806293f0>):
+  
+    21: <hr>
+    22: <%= link_to "Contacts", contacts_path, class: 'load_contacts', remote: true  %> | 
+    23: <%= link_to "New contact", new_contact_path %> | 
+    24: <%= link_to "Jobs", jobs_path %> | 
+    25: <%= link_to "Actions", actions_path %>
+    26: <hr>
+    27: <%= link_to "Tools", root_path %> 
+ActionView::Template::Error (undefined local variable or method `jobs_path' for #<#<Class:0x007fdc7b1790a8>:0x007fdc7b168320>):
+  
+    21: <hr>
+    22: <%= link_to "Contacts", contacts_path, class: 'load_contacts', remote: true  %> | 
+    23: <%= link_to "New contact", new_contact_path %> | 
+    24: <%= link_to "Jobs", jobs_path %> | 
+    25: <%= link_to "Actions", actions_path %>
+    26: <hr>
+    27: <%= link_to "Tools", root_path %> 
+app/views/layouts/application.html.erb:24:in `_app_views_layouts_application_html_erb___1789527783745421287_70292514447660'
+  
+app/views/layouts/application.html.erb:24:in `_app_views_layouts_application_html_erb___1789527783745421287_70292459846420'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (141.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (158.9ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:55:23 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 102ms (Views: 100.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-21 16:59:04 -0400
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-21 16:59:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PdfsController#index as HTML
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (4.2ms)
+  Rendered pdfs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 472ms (Views: 457.8ms | ActiveRecord: 2.5ms)
+
+
+Completed 200 OK in 476ms (Views: 472.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 16:59:12 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (16.8ms)
+  Rendered contacts/index.js.erb (29.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__4249930081381378870_70137786297800'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1312590526820335927_70137786292520'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (36.2ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 16:59:13 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 14.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007f947516d288>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb__603585778679272306_70137798372840'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb__603585778679272306_70137798372840'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+Started GET "/companies/new" for 127.0.0.1 at 2017-04-21 16:59:33 -0400
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2017-04-21 17:00:07 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+tTIoCqfMjlBdTIYMVH6c20Jsepq5n7nzo/65watTL15dFqG9Gpu0WP5/pj13GSav5fACaWNuPTZDBBKBVYuVg==", "company"=>{"name"=>"Acme,  Inc.", "about"=>"Plastic products, coyote traps r us", "city"=>"Scottsdale", "state"=>"AZ", "url"=>"www.acme.com"}, "commit"=>"Create Company"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme,  Inc."], ["about", "Plastic products, coyote traps r us"], ["city", "Scottsdale"], ["state", "AZ"], ["url", "www.acme.com"], ["created_at", 2017-04-21 21:00:07 UTC], ["updated_at", 2017-04-21 21:00:07 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/companies/1
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:00:07 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 35.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:00:54 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:02:31 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:03:27 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:03:43 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:04:57 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 39.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:04:59 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:05:04 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:05:19 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:06:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 281ms (Views: 270.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:06:06 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (14.4ms)
+  Rendered contacts/index.js.erb (27.1ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__2850254431685744385_70325409491180'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1469756936803101084_70325397747420'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (33.5ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:06:57 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:07:00 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (14.1ms)
+  Rendered contacts/index.js.erb (26.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__2850254431685744385_70325430445540'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1469756936803101084_70325430467040'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (33.6ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:07:01 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 10.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007febd431f0e8>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb___650188875995194668_70325426118920'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___650188875995194668_70325426118920'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.2ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:07:11 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:07:13 -0400
+Processing by CompaniesController#index as JS
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" ORDER BY "companies"."name" ASC[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:07:13 -0400
+Processing by CompaniesController#index as JS
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" ORDER BY "companies"."name" ASC[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:07:14 -0400
+Processing by CompaniesController#index as JS
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" ORDER BY "companies"."name" ASC[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:07:32 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 62ms (Views: 59.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:07:34 -0400
+Processing by CompaniesController#index as JS
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" ORDER BY "companies"."name" ASC[0m
+  Rendered companies/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 89ms (Views: 66.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:09:54 -0400
+Processing by CompaniesController#index as JS
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 78ms (Views: 60.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:10:03 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2017-04-21 17:10:05 -0400
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 65ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:10:06 -0400
+Processing by CompaniesController#index as JS
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+Completed 200 OK in 85ms (Views: 73.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:10:07 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007febd00f5000>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb___650188875995194668_70325409495900'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___650188875995194668_70325409495900'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.6ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:10:50 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007febd156f378>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb___650188875995194668_70325402701420'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___650188875995194668_70325402701420'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.3ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:10:51 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007febd1381bb0>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb___650188875995194668_70325393832340'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___650188875995194668_70325393832340'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.9ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:11:21 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007febd9081200>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb___650188875995194668_70325429656320'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___650188875995194668_70325429656320'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.2ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:11:23 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:11:25 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (12.5ms)
+  Rendered contacts/index.js.erb (24.9ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__2850254431685744385_70325472255500'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1469756936803101084_70325482873260'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (37.4ms)
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:11:26 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (12.8ms)
+  Rendered contacts/index.js.erb (23.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__2850254431685744385_70325453976820'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1469756936803101084_70325454044940'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (33.2ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:12:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 299ms (Views: 286.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:12:31 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (14.6ms)
+  Rendered contacts/index.js.erb (29.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__4131277063358519894_70218987605760'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1367094095529973953_70218983102580'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (36.5ms)
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:12:33 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (13.3ms)
+  Rendered contacts/index.js.erb (25.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__4131277063358519894_70219025946440'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1367094095529973953_70219026006580'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (33.4ms)
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:12:33 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (13.3ms)
+  Rendered contacts/index.js.erb (25.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__4131277063358519894_70219025571780'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1367094095529973953_70219025630880'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.5ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (35.1ms)
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:12:34 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC[0m
+  Rendered contacts/_contacts.html.erb (13.6ms)
+  Rendered contacts/index.js.erb (25.2ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column contacts.last_name does not exist
+LINE 1: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."las...
+                                                     ^
+: SELECT "contacts".* FROM "contacts" ORDER BY "contacts"."last_name" ASC):
+     6:       <td>email</td>
+     7:     </tr>
+     8:   </th>
+     9: <% contacts.each do |contact| %>
+    10:   <tr>
+    11:     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    12:     <td><%= contact.username %></td>
+  
+app/views/contacts/_contacts.html.erb:9:in `_app_views_contacts__contacts_html_erb__4131277063358519894_70219022830720'
+app/views/contacts/index.js.erb:2:in `_app_views_contacts_index_js_erb___1367094095529973953_70219022891260'
+app/controllers/contacts_controller.rb:5:in `index'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (33.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:13:50 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:13:51 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/_contacts.html.erb (4.7ms)
+  Rendered contacts/index.js.erb (15.7ms)
+Completed 200 OK in 30ms (Views: 24.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:13:53 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/_contacts.html.erb (2.7ms)
+  Rendered contacts/index.js.erb (18.5ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:14:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 290ms (Views: 280.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:14:06 -0400
+Processing by ContactsController#index as JS
+  Rendering contacts/index.js.erb
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/_contacts.html.erb (4.7ms)
+  Rendered contacts/index.js.erb (17.2ms)
+Completed 200 OK in 35ms (Views: 26.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:14:07 -0400
+Processing by CompaniesController#index as JS
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 120ms (Views: 97.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:14:09 -0400
+Processing by CompaniesController#index as JS
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 88ms (Views: 76.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:14:13 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.9ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:14:43 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.6ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:14:45 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:14:46 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:14:46 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.3ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:14:58 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:15:00 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:15:01 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:17:39 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:18:00 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:18:09 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:19:10 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.4ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:19:10 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:19:36 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:20:10 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:21:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (16.6ms)
+Completed 200 OK in 36ms (Views: 20.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:21:15 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.9ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:21:16 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:21:33 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+Completed 200 OK in 260ms (Views: 258.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:21:35 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 84ms (Views: 68.0ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:21:37 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:21:37 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (2.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 17:22:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 281ms (Views: 271.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:22:03 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 90ms (Views: 75.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:22:04 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (3.8ms)
+Completed 200 OK in 16ms (Views: 5.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:22:04 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb (1.6ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:22:08 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:22:10 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:22:24 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_main_nav.html.erb (1.6ms)
+Completed 200 OK in 71ms (Views: 58.7ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:22:25 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:22:27 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (23.8ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for #<Contact:0x007ffdf0b89318>
+Did you mean?  company
+               company=):
+    2: <%= form_for @contact do |f| %>
+    3:   <p>
+    4:     <%= f.label :company %>
+    5:     <%= f.collection_select :company_id, Company.all, :id, :name %>
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :username %>
+  
+app/views/contacts/new.html.erb:5:in `block in _app_views_contacts_new_html_erb__2167992547136346169_70364320366620'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb__2167992547136346169_70364320366620'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.3ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:22:57 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:23:49 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hom4/SYuWqK0rTtBoM/g2LuFC44GkCTw/RnWEitBC2gFKSrb+NsGSpYh98FkQn4xaRt6bcn74uPqmjy/KLppgw==", "contact"=>{"company"=>"1", "username"=>"wiley", "email"=>"wiley@coyote.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+Unpermitted parameter: company
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_main_nav.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:24:18 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVCtBGgUEsVgaYCi24fs3jyiulZLm9mRaat1/vnWGg/C8D8ituFOLULlTCIfCnI37jzLtYTwH4J+KJ9T+i145A==", "contact"=>{"company"=>"1", "username"=>"wiley", "email"=>"wiley@coyote.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Company(#70364339048300) expected, got String(#70364286066800)):
+  
+app/controllers/contacts_controller.rb:22:in `create'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (119.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (117.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (270.7ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (241.2ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-21 21:31:09 UTC], ["updated_at", 2017-04-21 21:31:09 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (120.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (117.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (240.6ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (236.5ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-21 21:31:31 UTC], ["updated_at", 2017-04-21 21:31:31 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:31:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVCtBGgUEsVgaYCi24fs3jyiulZLm9mRaat1/vnWGg/C8D8ituFOLULlTCIfCnI37jzLtYTwH4J+KJ9T+i145A==", "contact"=>{"company"=>"1", "username"=>"wiley", "email"=>"wiley@coyote.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+Unpermitted parameter: company
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 306ms (Views: 266.7ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:31:44 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gO5a9EJyQo4XZWWAO5W6wPkxz9dbmVmXQE7VmYEg1nUDTsjSnIceZjXpqQD/GCQpK6++NJTyn4RXzT80gtu0ng==", "contact"=>{"company"=>"1", "username"=>"wiley", "email"=>"wiley@coyote.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+Unpermitted parameter: company
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:31:48 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  Rendered contacts/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_main_nav.html.erb (2.0ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:31:50 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 66.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (119.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (117.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (241.6ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (237.9ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-21 21:33:19 UTC], ["updated_at", 2017-04-21 21:33:19 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ned"], ["email", "ned@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "max"], ["email", "max@abc.com"], ["password", "pointer"], ["company_id", 2], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "skai"], ["email", "skai@abc.com"], ["password", "pointer"], ["company_id", 3], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kaleo"], ["email", "kaleo@abc.com"], ["password", "pointer"], ["company_id", 4], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "megan"], ["email", "megan@abc.com"], ["password", "pointer"], ["company_id", 5], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tenzing"], ["email", "tenzing@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "davis"], ["email", "davis@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "cole"], ["email", "cole@abc.com"], ["password", "pointer"], ["company_id", 7], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ted"], ["email", "ted@abc.com"], ["password", "pointer"], ["company_id", 8], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "fred"], ["email", "fred@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-21 21:33:20 UTC], ["updated_at", 2017-04-21 21:33:20 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:33:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (28.4ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 264ms (Views: 241.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:33:24 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (2.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (54.3ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+Completed 200 OK in 125ms (Views: 104.6ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:33:30 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 88ms (Views: 79.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:33:34 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 54ms (Views: 49.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:33:38 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 65ms (Views: 60.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:33:55 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cJXFhKN2EpimR/stsaEN/zUvsEtvw2lLKkbOPuKuq7l5+atiCDekK0PfpjZe+h+a9uX9QCZ6H5zOgBa/aL24Qg==", "contact"=>{"company"=>"4", "username"=>"flo", "email"=>"florence@aol.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+Unpermitted parameter: company
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:33:59 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_main_nav.html.erb (0.5ms)
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:34:31 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (40.0ms)
+  Rendered layouts/_main_nav.html.erb (2.9ms)
+Completed 200 OK in 116ms (Views: 104.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:34:33 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:34:48 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dQX9GMHEIU79tFpQdA4UC9fZTg7LIQsJPTG5CZRJbDZ8aZP+aoWX/RgsB0ubVQZuFBMDBYKYfd7Z92GIHlp/zQ==", "contact"=>{"company"=>"5", "username"=>"george", "email"=>"cost@js.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"dQX9GMHEIU79tFpQdA4UC9fZTg7LIQsJPTG5CZRJbDZ8aZP+aoWX/RgsB0ubVQZuFBMDBYKYfd7Z92GIHlp/zQ==", "contact"=>{"company"=>"5", "username"=>"george", "email"=>"cost@js.com", "password"=>"bosco"}, "commit"=>"Create Contact", "controller"=>"contacts", "action"=>"create"} permitted: false>):
+  
+app/controllers/contacts_controller.rb:22:in `create'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (118.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (117.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (240.1ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (236.7ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-21 21:35:41 UTC], ["updated_at", 2017-04-21 21:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ned"], ["email", "ned@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "max"], ["email", "max@abc.com"], ["password", "pointer"], ["company_id", 2], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "skai"], ["email", "skai@abc.com"], ["password", "pointer"], ["company_id", 3], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kaleo"], ["email", "kaleo@abc.com"], ["password", "pointer"], ["company_id", 4], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "megan"], ["email", "megan@abc.com"], ["password", "pointer"], ["company_id", 5], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tenzing"], ["email", "tenzing@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "davis"], ["email", "davis@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "cole"], ["email", "cole@abc.com"], ["password", "pointer"], ["company_id", 7], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ted"], ["email", "ted@abc.com"], ["password", "pointer"], ["company_id", 8], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "fred"], ["email", "fred@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-21 21:35:42 UTC], ["updated_at", 2017-04-21 21:35:42 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for 127.0.0.1 at 2017-04-21 17:35:47 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (53.7ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 300ms (Views: 276.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2017-04-21 17:35:50 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 43ms (Views: 38.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-21 17:35:52 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (22.8ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 66ms (Views: 62.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-21 17:36:02 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nyn0fRHmcbC1KdwBOlhH6tlZrCnLYKlJzWLv8RI0QSCWRZqbuqfHA1CxgRrVA1WPGpPhIoLZ354ppDdwmCdS2w==", "contact"=>{"company_id"=>"3", "username"=>"kramer", "email"=>"k@kk.com", "password"=>"[FILTERED]"}, "commit"=>"Create Contact"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kramer"], ["email", "k@kk.com"], ["password", "asdf"], ["company_id", 3], ["created_at", 2017-04-21 21:36:02 UTC], ["updated_at", 2017-04-21 21:36:02 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/contacts/11
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-21 17:36:02 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb (238.4ms)
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contact' for #<#<Class:0x007fd3f166aa68>:0x007fd3f381a3c0>
+Did you mean?  @contact
+               concat):
+    2: 
+    3: <p><%= @contact.username %></p>
+    4: <p><%= @contact.email %></p>
+    5: <p><%= link_to @contact.company.name, company_path(contact.company) %></p>
+  
+app/views/contacts/show.html.erb:5:in `_app_views_contacts_show_html_erb___3060047710368049915_70274150076160'
+app/controllers/contacts_controller.rb:11:in `show'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.7ms)
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-21 17:36:42 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb (2.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-21 17:37:08 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+Completed 200 OK in 105ms (Views: 80.1ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2017-04-21 17:37:23 -0400
+Processing by CompaniesController#new as HTML
+  Rendering companies/new.html.erb within layouts/application
+  Rendered companies/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2017-04-21 17:37:46 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iHiIo64piLWWS3aW/99s/Ptjk9drJ2wcOfGPltbbUe7AAuHotopTMYXAaccqScyzx/BXNPGesDIF8LcARyiqOA==", "company"=>{"name"=>"Panera", "about"=>"bagels and kids", "city"=>"Boston", "state"=>"MA", "url"=>"www.panera.com"}, "commit"=>"Create Company"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Panera"], ["about", "bagels and kids"], ["city", "Boston"], ["state", "MA"], ["url", "www.panera.com"], ["created_at", 2017-04-21 21:37:46 UTC], ["updated_at", 2017-04-21 21:37:46 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/companies/9
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/companies/9" for 127.0.0.1 at 2017-04-21 17:37:46 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 74ms (Views: 69.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:37:50 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (1.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 48.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:38:16 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2017-04-21 17:38:51 -0400
+Processing by CompaniesController#index as HTML
+  Rendering companies/index.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered companies/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2017-04-21 17:38:53 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  Rendered companies/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 49ms (Views: 44.9ms | ActiveRecord: 0.3ms)
+
+

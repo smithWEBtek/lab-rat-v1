@@ -1,0 +1,20 @@
+<h1>New Contact</h1>
+<%= form_for @contact do |f| %>
+  <p>
+    <%= f.label :company %>
+    <%= f.collection_select :company_id, Company.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p> 
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </p> 
+<%= f.submit %>
+<% end %>

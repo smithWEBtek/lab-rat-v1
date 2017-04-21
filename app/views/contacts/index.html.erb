@@ -1,0 +1,17 @@
+<h1>Contacts</h1>
+<table>
+  <th class="col-large">
+    <h3><tr align="left">
+      <td>company</td>
+      <td>username</td>
+      <td>email</td>
+    </tr></h3>
+  </th>
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    <td><%= contact.username %></td>
+    <td><%= contact.email %></td>
+  </tr>
+<% end %>
+</table>

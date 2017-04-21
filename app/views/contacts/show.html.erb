@@ -1,0 +1,6 @@
+<h1>Show Contact</h1>
+
+<p><%= @contact.username %></p>
+<p><%= @contact.email %></p>
+<p><%= link_to @contact.company.name, company_path(@contact.company) %></p>
+

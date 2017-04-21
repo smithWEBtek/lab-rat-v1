@@ -1,0 +1,19 @@
+ 
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: csv3_development
+ 
+test:
+  <<: *default
+  database: csv3_test
+ 
+production:
+  <<: *default
+  database: csv3_production
+  username: csv3
+  password: <%= ENV['SWT-V3_DATABASE_PASSWORD'] %>
