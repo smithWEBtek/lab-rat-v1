@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :picture_uploaders
   root 'tools#home'
   get '/contacts/:id/detail', to: 'contacts#detail'
+ 
+  get '/reset_pdfs', to: 'pdfs#reset_pdfs'
   get '/import_pdfs', to: 'pdfs#import_pdfs'
   get '/download_pdf/:id', to: 'pdfs#download_pdf'
   get '/new_distill_pdf', to: 'pdfs#new_distill_pdf'

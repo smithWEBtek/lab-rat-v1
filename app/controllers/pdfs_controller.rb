@@ -1,19 +1,13 @@
 class PdfsController < ApplicationController
+  
+  def reset_pdfs
+    Pdf.reset_pdfs
+    redirect_to pdfs_path
+  end
 
   def import_pdfs
     Pdf.add_pdfs
     redirect_to pdfs_path
-  end
-
-  def index
-    @pdfs = Pdf.all 
-  end
-
-  def show
-    @pdf = Pdf.find_by_id(params[:id])
-    pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
-    send_file(pdf_full_path, :filename => "@pdf.name.gsub('.pdf','')", :disposition => 'inline', :type => "application/pdf")
-    # send_file(pdf_full_path, disposition: "inline", type: "application/pdf")
   end
 
   def download_pdf
@@ -21,8 +15,7 @@ class PdfsController < ApplicationController
     pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
     send_file(pdf_full_path, disposition: "download", type: "application/pdf")
   end
-
-
+ 
   def new_distill_pdf
     @pdf = Pdf.new 
     @doc = Doc.new
@@ -36,6 +29,17 @@ class PdfsController < ApplicationController
     else
       render 'pdfs/create_pdf'
     end
+  end
+
+  def index
+    @pdfs = Pdf.all 
+  end
+
+  def show
+    @pdf = Pdf.find_by_id(params[:id])
+    pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
+    send_file(pdf_full_path, :filename => "@pdf.name.gsub('.pdf','')", :disposition => 'inline', :type => "application/pdf")
+    # send_file(pdf_full_path, disposition: "inline", type: "application/pdf")
   end
 
   def new

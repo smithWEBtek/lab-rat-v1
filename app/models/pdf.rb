@@ -19,6 +19,11 @@ class Pdf < ApplicationRecord
     end
   end
 
+  def self.reset_pdfs
+    Pdf.destroy_all
+    ActiveRecord::Base.connection.reset_pk_sequence!('pdfs')
+  end
+
   def import_pdfs
     # magic ruby code that adds a pdf to the app/assets/pdfs folder 
     # using the 'new' form, and the 'file_field' form helper

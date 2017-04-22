@@ -6683,3 +6683,1497 @@ Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/Superstition.p
 Completed 200 OK in 3ms (ActiveRecord: 0.5ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAvatarToContacts (20170422165011)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.7ms)[0m  [1m[35mALTER TABLE "contacts" ADD "avatar" character varying[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422165011"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-22 12:51:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (1.7ms)
+Started GET "/" for 127.0.0.1 at 2017-04-22 12:51:11 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+Completed 200 OK in 6446ms (Views: 6431.6ms | ActiveRecord: 0.0ms)
+
+
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+Completed 200 OK in 1829ms (Views: 1827.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 12:51:16 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (1.5ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (23.2ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+Completed 200 OK in 80ms (Views: 60.7ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/pdfs/14" for 127.0.0.1 at 2017-04-22 12:51:19 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPdf Load (2.8ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/Your Song.pdf (0.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/Your Song.pdf):
+  
+app/controllers/pdfs_controller.rb:15:in `show'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.2ms)
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 12:51:30 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (1.8ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+Completed 200 OK in 114ms (Views: 104.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pdfs/9" for 127.0.0.1 at 2017-04-22 12:51:33 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPdf Load (1.2ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/Summertime.pdf (0.5ms)
+Completed 200 OK in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/pdfs/9" for 127.0.0.1 at 2017-04-22 12:51:33 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPdf Load (2.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/Summertime.pdf (0.4ms)
+Completed 200 OK in 7ms (ActiveRecord: 2.9ms)
+
+
+  [1m[36mPdf Load (0.7ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 10]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 12]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-04-22 12:53:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_main_nav.html.erb (1.5ms)
+Completed 200 OK in 544ms (Views: 530.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 12:53:49 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.9ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 90ms (Views: 77.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/import_pdfs" for 127.0.0.1 at 2017-04-22 12:53:56 -0400
+Processing by PdfsController#import_pdfs as HTML
+  [1m[36mPdf Load (1.7ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "lucky.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lucky.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "naima.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "naima.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pick-up-pieces.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pick-up-pieces.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pure-imagination.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pure-imagination.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "puttin-ritz.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "puttin-ritz.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (1.1ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "single-petal.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "single-petal.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "summertime.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "summertime.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "superstition.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "superstition.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "valentine.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "valentine.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (1.9ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "verano.pdf"], ["LIMIT", 1]]
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "verano.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.9ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "what-world-needs.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "what-world-needs.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "who-can-i-turn-to.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "who-can-i-turn-to.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "wichita-lineman.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "wichita-lineman.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "your-song.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "your-song.pdf"], ["created_at", 2017-04-22 16:53:56 UTC], ["updated_at", 2017-04-22 16:53:56 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 115ms (ActiveRecord: 48.5ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 12:53:56 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_main_nav.html.erb (1.7ms)
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pdfs/14" for 127.0.0.1 at 2017-04-22 12:53:59 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPdf Load (0.7ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/your-song.pdf (0.3ms)
+Completed 200 OK in 16ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/pdfs/14" for 127.0.0.1 at 2017-04-22 12:54:00 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/your-song.pdf (0.2ms)
+Completed 200 OK in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/pdfs/11" for 127.0.0.1 at 2017-04-22 12:54:08 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPdf Load (3.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/what-world-needs.pdf (1.5ms)
+Completed 200 OK in 9ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/pdfs/11" for 127.0.0.1 at 2017-04-22 12:54:08 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/what-world-needs.pdf (0.2ms)
+Completed 200 OK in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-22 13:03:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+Completed 200 OK in 592ms (Views: 574.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-22 13:04:34 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  Rendered layouts/_admin_nav.html.erb (553.5ms)
+Completed 500 Internal Server Error in 827ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users_path' for #<#<Class:0x007fb5f7ebfb18>:0x007fb5f8d37830>):
+    1: <div class="container">
+    2:   <%= link_to "Reset Pdfs", reset_pdfs_path %> | 
+    3:   <%= link_to "Import Pdfs", import_pdfs_path %> | 
+    4:   <%= link_to "Users", users_path %>
+    5: </div>
+  
+app/views/layouts/_admin_nav.html.erb:4:in `_app_views_layouts__admin_nav_html_erb___1079777821144812322_70209794430240'
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___3098517643875398869_70209766215200'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-22 13:04:58 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.4ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-22 13:05:38 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_main_nav.html.erb (2.1ms)
+  Rendered layouts/_admin_nav.html.erb (1.1ms)
+Completed 200 OK in 144ms (Views: 127.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reset_pdfs" for 127.0.0.1 at 2017-04-22 13:05:44 -0400
+Processing by PdfsController#reset_pdfs as HTML
+  [1m[36mPdf Load (2.9ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 96ms (ActiveRecord: 43.6ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:05:44 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_main_nav.html.erb (2.5ms)
+  Rendered layouts/_admin_nav.html.erb (2.1ms)
+Completed 200 OK in 174ms (Views: 169.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/import_pdfs" for 127.0.0.1 at 2017-04-22 13:05:46 -0400
+Processing by PdfsController#import_pdfs as HTML
+  [1m[36mPdf Load (2.2ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "lucky.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lucky.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (1.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "naima.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "naima.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pick-up-pieces.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pick-up-pieces.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.7ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pure-imagination.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pure-imagination.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "puttin-ritz.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "puttin-ritz.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "single-petal.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "single-petal.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "summertime.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "summertime.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "superstition.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "superstition.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "valentine.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "valentine.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "verano.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "verano.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.8ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "what-world-needs.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "what-world-needs.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "who-can-i-turn-to.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "who-can-i-turn-to.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "wichita-lineman.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "wichita-lineman.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "your-song.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "your-song.pdf"], ["created_at", 2017-04-22 17:05:46 UTC], ["updated_at", 2017-04-22 17:05:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 106ms (ActiveRecord: 25.7ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:05:46 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+  Rendered layouts/_admin_nav.html.erb (2.4ms)
+Completed 200 OK in 74ms (Views: 71.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:05:47 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (2.1ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+  Rendered layouts/_admin_nav.html.erb (4.0ms)
+Completed 200 OK in 132ms (Views: 127.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/pdfs/new" for 127.0.0.1 at 2017-04-22 13:05:49 -0400
+Processing by PdfsController#new as HTML
+  Rendering pdfs/new.html.erb within layouts/application
+  Rendered pdfs/new.html.erb within layouts/application (34.0ms)
+  Rendered layouts/_main_nav.html.erb (1.4ms)
+  Rendered layouts/_admin_nav.html.erb (1.3ms)
+Completed 200 OK in 116ms (Views: 112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:05:53 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.7ms)
+Completed 200 OK in 91ms (Views: 86.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:06:33 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:06:51 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.8ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 68.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pdfs/6" for 127.0.0.1 at 2017-04-22 13:07:00 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/single-petal.pdf (0.4ms)
+Completed 200 OK in 28ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/pdfs/6" for 127.0.0.1 at 2017-04-22 13:07:00 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/single-petal.pdf (0.1ms)
+Completed 200 OK in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-22 13:17:36 -0400
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_main_nav.html.erb (1.6ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 110ms (Views: 106.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-22 13:17:38 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (25.2ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 164ms (Views: 75.6ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-22 13:20:03 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (2.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (25.7ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 132ms (Views: 119.8ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-22 13:20:28 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+tLebBw1psHSV6iiRnQ/17OG7yxmwmkyT4EqfJNRA5MP2IsB+n2JP+cRawRFZyqZ37rrXkF/3GmnuQQpvsJ6lA==", "contact"=>{"company_id"=>"5", "username"=>"brad", "email"=>"brad@abc.com", "password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fb60042ca30 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170422-19031-ofxm43.jpg>, @original_filename="bradsmith-swt.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"contact[avatar]\"; filename=\"bradsmith-swt.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Contact"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"company_id"=>"5", "username"=>"brad", "email"=>"brad@abc.com", "password"=>"pointer", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fb60042ca30 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170422-19031-ofxm43.jpg>, @original_filename="bradsmith-swt.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"contact[avatar]\"; filename=\"bradsmith-swt.jpg\"\r\nContent-Type: image/jpeg\r\n">} permitted: false>):
+  
+app/controllers/contacts_controller.rb:28:in `create'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.9ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-04-22 13:21:01 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+tLebBw1psHSV6iiRnQ/17OG7yxmwmkyT4EqfJNRA5MP2IsB+n2JP+cRawRFZyqZ37rrXkF/3GmnuQQpvsJ6lA==", "contact"=>{"company_id"=>"5", "username"=>"brad", "email"=>"brad@abc.com", "password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fb5fe91bc50 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170422-19031-f83mzu.jpg>, @original_filename="bradsmith-swt.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"contact[avatar]\"; filename=\"bradsmith-swt.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Contact"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (6.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (32.9ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at", "avatar") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "brad"], ["email", "brad@abc.com"], ["password", "pointer"], ["company_id", 5], ["created_at", 2017-04-22 17:21:01 UTC], ["updated_at", 2017-04-22 17:21:01 UTC], ["avatar", "bradsmith-swt.jpg"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/contacts/11
+Completed 302 Found in 188ms (ActiveRecord: 91.9ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:21:01 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (1.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (1.4ms)
+  Rendered contacts/show.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 159ms (Views: 148.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pdfs/11" for 127.0.0.1 at 2017-04-22 13:21:08 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/what-world-needs.pdf (0.5ms)
+Completed 200 OK in 32ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:21:14 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:21:15 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:21:15 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:21:16 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:23:50 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (2.6ms)
+  Rendered contacts/show.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+  Rendered layouts/_admin_nav.html.erb (1.1ms)
+Completed 200 OK in 144ms (Views: 113.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:24:04 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (2.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.3ms)
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:24:05 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:24:05 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pdfs/11" for 127.0.0.1 at 2017-04-22 13:24:07 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPdf Load (3.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/what-world-needs.pdf (0.4ms)
+Completed 200 OK in 22ms (ActiveRecord: 3.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (133.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (124.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (361.1ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (247.0ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (9.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocs (20170422002400)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "docs" ("id" serial primary key, "name" character varying, "location" character varying, "format" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422002400"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentPdfToPdfs (20170422011004)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_file_name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_content_type" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_file_size" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_updated_at" timestamp[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422011004"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToContacts (20170422165011)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "contacts" ADD "image" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422165011"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImageUploaders (20170422172707)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "image_uploaders" ("id" serial primary key, "upload" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422172707"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-22 17:34:46 UTC], ["updated_at", 2017-04-22 17:34:46 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (122.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (118.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (340.0ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (258.5ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocs (20170422002400)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "docs" ("id" serial primary key, "name" character varying, "location" character varying, "format" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422002400"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentPdfToPdfs (20170422011004)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_file_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_content_type" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_updated_at" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422011004"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToContacts (20170422165011)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "contacts" ADD "image" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422165011"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImageUploaders (20170422172707)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "image_uploaders" ("id" serial primary key, "upload" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422172707"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-22 17:35:40 UTC], ["updated_at", 2017-04-22 17:35:40 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ned"], ["email", "ned@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "max"], ["email", "max@abc.com"], ["password", "pointer"], ["company_id", 2], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "skai"], ["email", "skai@abc.com"], ["password", "pointer"], ["company_id", 3], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kaleo"], ["email", "kaleo@abc.com"], ["password", "pointer"], ["company_id", 4], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "megan"], ["email", "megan@abc.com"], ["password", "pointer"], ["company_id", 5], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tenzing"], ["email", "tenzing@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "davis"], ["email", "davis@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "cole"], ["email", "cole@abc.com"], ["password", "pointer"], ["company_id", 7], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ted"], ["email", "ted@abc.com"], ["password", "pointer"], ["company_id", 8], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "fred"], ["email", "fred@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-22 17:35:41 UTC], ["updated_at", 2017-04-22 17:35:41 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:35:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  Rendered contacts/show.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    1: <h1>Show Contact</h1>
+    2: 
+    3: <p><%= @contact.username %></p>
+    4: <p><%= @contact.email %></p>
+    5: <p><%= link_to @contact.company.name, company_path(@contact.company) %></p>
+    6: 
+  
+app/views/contacts/show.html.erb:3:in `_app_views_contacts_show_html_erb__216315054243515369_70263685528460'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ned"], ["email", "ned@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "max"], ["email", "max@abc.com"], ["password", "pointer"], ["company_id", 2], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "skai"], ["email", "skai@abc.com"], ["password", "pointer"], ["company_id", 3], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kaleo"], ["email", "kaleo@abc.com"], ["password", "pointer"], ["company_id", 4], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "megan"], ["email", "megan@abc.com"], ["password", "pointer"], ["company_id", 5], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tenzing"], ["email", "tenzing@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "davis"], ["email", "davis@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "cole"], ["email", "cole@abc.com"], ["password", "pointer"], ["company_id", 7], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ted"], ["email", "ted@abc.com"], ["password", "pointer"], ["company_id", 8], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "fred"], ["email", "fred@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-22 17:36:23 UTC], ["updated_at", 2017-04-22 17:36:23 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:36:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (21.4ms)
+  Rendered contacts/show.html.erb within layouts/application (145.2ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 14.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for #<Contact:0x007fd550f21638>):
+    1: <h3><%= contact.id %>: <%= contact.username %></h3>
+    2: <div id="body-<%= contact.id %>"><%= contact.username %> | <%= contact.email %> | <%= contact.password %></div>
+    3: 
+    4: <img src="<%= contact.avatar %>">
+    5: 
+    6: <br>
+    7: <button class="js-username", data-id="<%= contact.id %>", data-username="<%= contact.username %>">Show username again</button>
+  
+app/views/contacts/_contact.html.erb:4:in `_app_views_contacts__contact_html_erb___4226279897836080128_70277077551340'
+app/views/contacts/show.html.erb:7:in `_app_views_contacts_show_html_erb__3180497560874357656_70277081399520'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.2ms)
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:36:55 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (11.4ms)
+  Rendered contacts/show.html.erb within layouts/application (30.2ms)
+  Rendered layouts/_main_nav.html.erb (1.5ms)
+  Rendered layouts/_admin_nav.html.erb (1.5ms)
+Completed 200 OK in 812ms (Views: 799.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-22 13:37:00 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (2.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (41.9ms)
+  Rendered layouts/_main_nav.html.erb (0.5ms)
+  Rendered layouts/_admin_nav.html.erb (0.4ms)
+Completed 200 OK in 100ms (Views: 89.4ms | ActiveRecord: 5.9ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (124.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_development"[0m
+  [1m[35m (118.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "csv3_test"[0m
+  [1m[35m (331.1ms)[0m  [1m[35mCREATE DATABASE "csv3_development" ENCODING = 'unicode'[0m
+  [1m[35m (256.3ms)[0m  [1m[35mCREATE DATABASE "csv3_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5743145049901137900);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCompanies (20170311030447)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "about" text, "city" character varying, "state" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030447"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateContacts (20170311030659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "company_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170311030659"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePdfs (20170316162326)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "pdfs" ("id" serial primary key, "name" text, "location" character varying DEFAULT 'app/assets/pdfs', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316162326"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateScrape (20170419060636)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" serial primary key, "name" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170419060636"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDocs (20170422002400)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "docs" ("id" serial primary key, "name" character varying, "location" character varying, "format" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422002400"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentPdfToPdfs (20170422011004)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_file_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_content_type" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pdfs" ADD "pdf_updated_at" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422011004"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageToContacts (20170422165011)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "contacts" ADD "image" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422165011"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImageUploaders (20170422172707)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "image_uploaders" ("id" serial primary key, "upload" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170422172707"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5743145049901137900)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Network"], ["about", "about me"], ["city", "hometown"], ["state", "homestate"], ["url", "me.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Acme"], ["about", "Coyote is after you."], ["city", "Albany"], ["state", "NY"], ["url", "http://www.acme.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Sears"], ["about", "Everyting for the home."], ["city", "Clifton"], ["state", "NJ"], ["url", "http://www.sears.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Walmart"], ["about", "Always the low price."], ["city", "Bentonville"], ["state", "AK"], ["url", "http://www.walmart.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ace Hardware"], ["about", "Ace is the place for the helpful hardware mammal."], ["city", "Tulsa"], ["state", "OK"], ["url", "http://www.acehardware.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JB Hunt"], ["about", "Ship it!"], ["city", "Chicago"], ["state", "IL"], ["url", "http://www.jbhunt.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "about", "city", "state", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pepsi Co"], ["about", "You want Pepsi, not Coke"], ["city", "Louisville"], ["state", "KY"], ["url", "http://www.pepsico.com"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "deleted"], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ned"], ["email", "ned@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "max"], ["email", "max@abc.com"], ["password", "pointer"], ["company_id", 2], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "skai"], ["email", "skai@abc.com"], ["password", "pointer"], ["company_id", 3], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "kaleo"], ["email", "kaleo@abc.com"], ["password", "pointer"], ["company_id", 4], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "megan"], ["email", "megan@abc.com"], ["password", "pointer"], ["company_id", 5], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "tenzing"], ["email", "tenzing@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "davis"], ["email", "davis@abc.com"], ["password", "pointer"], ["company_id", 6], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "cole"], ["email", "cole@abc.com"], ["password", "pointer"], ["company_id", 7], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "ted"], ["email", "ted@abc.com"], ["password", "pointer"], ["company_id", 8], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "fred"], ["email", "fred@abc.com"], ["password", "pointer"], ["company_id", 1], ["created_at", 2017-04-22 17:37:13 UTC], ["updated_at", 2017-04-22 17:37:13 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/contacts" for 127.0.0.1 at 2017-04-22 13:37:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (68.8ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 484ms (Views: 433.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:37:24 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (1.1ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.5ms)
+Completed 200 OK in 68ms (Views: 53.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/reset_pdfs" for 127.0.0.1 at 2017-04-22 13:37:26 -0400
+Processing by PdfsController#reset_pdfs as HTML
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 8ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:37:26 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_main_nav.html.erb (0.5ms)
+  Rendered layouts/_admin_nav.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/import_pdfs" for 127.0.0.1 at 2017-04-22 13:37:27 -0400
+Processing by PdfsController#import_pdfs as HTML
+  [1m[36mPdf Load (3.7ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "lucky.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lucky.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "naima.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "naima.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pick-up-pieces.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pick-up-pieces.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pure-imagination.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pure-imagination.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "puttin-ritz.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "puttin-ritz.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "single-petal.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "single-petal.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "summertime.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "summertime.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "superstition.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "superstition.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "valentine.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "valentine.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (1.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "verano.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "verano.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "what-world-needs.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "what-world-needs.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "who-can-i-turn-to.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "who-can-i-turn-to.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "wichita-lineman.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "wichita-lineman.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "your-song.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "your-song.pdf"], ["created_at", 2017-04-22 17:37:27 UTC], ["updated_at", 2017-04-22 17:37:27 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 79ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-22 13:37:27 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+  Rendered layouts/_admin_nav.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-04-22 13:37:29 -0400
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/new.html.erb within layouts/application (28.6ms)
+  Rendered layouts/_main_nav.html.erb (0.5ms)
+  Rendered layouts/_admin_nav.html.erb (0.4ms)
+Completed 200 OK in 73ms (Views: 68.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-04-22 13:37:46 -0400
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8NOC6znRywfw7yWFv0+Lk3rO7tT1QU+9Zx7Js0nt1jcF2deG35nk+cWp5iO8XJ7dFvLqptL8+uaPJufmZH6vMA==", "contact"=>{"company_id"=>"4", "username"=>"brad", "email"=>"brad@abc.com", "password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fc7c9b66aa0 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170422-20913-2kw19y.jpg>, @original_filename="bradsmith-swt.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"contact[avatar]\"; filename=\"bradsmith-swt.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Contact"}
+Unpermitted parameter: avatar
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("username", "email", "password", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "brad"], ["email", "brad@abc.com"], ["password", "pointer"], ["company_id", 4], ["created_at", 2017-04-22 17:37:46 UTC], ["updated_at", 2017-04-22 17:37:46 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/contacts/11
+Completed 302 Found in 57ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:37:46 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (1.7ms)
+  Rendered contacts/show.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 130ms (Views: 119.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:38:20 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (6.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (182.8ms)
+  Rendered contacts/show.html.erb within layouts/application (195.3ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 324ms (Views: 286.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-22 13:38:22 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (30.5ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 102ms (Views: 93.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:38:24 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (1.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (3.7ms)
+  Rendered contacts/show.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 88.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:38:45 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (1.1ms)
+  Rendered contacts/show.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_main_nav.html.erb (2.1ms)
+  Rendered layouts/_admin_nav.html.erb (1.4ms)
+Completed 200 OK in 92ms (Views: 88.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/11/edit" for 127.0.0.1 at 2017-04-22 13:38:50 -0400
+Processing by ContactsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/edit.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 83ms (Views: 78.8ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/contacts/11" for 127.0.0.1 at 2017-04-22 13:39:11 -0400
+Processing by ContactsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f3WWVZdm9PEwP4qXICeMrmSHhqNHXSm4SvRpH5PTZyGKf8M4cS7bDwV5STEjNJngCLuC0WDgnOOizEdKvkAeJg==", "contact"=>{"company_id"=>"4", "username"=>"brad", "email"=>"brad@abc.com", "password"=>"[FILTERED]", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc7c99aa9a0 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170422-20913-hlz66z.jpg>, @original_filename="bradsmith-swt.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"contact[image]\"; filename=\"bradsmith-swt.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Contact", "id"=>"11"}
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `short_name' for #<Contact:0x007fc7c8278890>):
+  
+app/models/image_uploader.rb:17:in `public_id'
+app/controllers/contacts_controller.rb:43:in `update'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.8ms)
+Started PATCH "/contacts/11" for 127.0.0.1 at 2017-04-22 13:40:05 -0400
+Processing by ContactsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f3WWVZdm9PEwP4qXICeMrmSHhqNHXSm4SvRpH5PTZyGKf8M4cS7bDwV5STEjNJngCLuC0WDgnOOizEdKvkAeJg==", "contact"=>{"company_id"=>"4", "username"=>"brad", "email"=>"brad@abc.com", "password"=>"[FILTERED]", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc7c82ccbe8 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170422-20913-1ed0bg6.jpg>, @original_filename="bradsmith-swt.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"contact[image]\"; filename=\"bradsmith-swt.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Contact", "id"=>"11"}
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "contacts" SET "image" = $1, "updated_at" = $2 WHERE "contacts"."id" = $3[0m  [["image", "brad.png"], ["updated_at", 2017-04-22 17:40:05 UTC], ["id", 11]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "contacts" SET "image" = 'image/upload/v1492882806/brad.png' WHERE "contacts"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/contacts/11
+Completed 302 Found in 618ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-22 13:40:06 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (3.6ms)
+  Rendered contacts/show.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 74ms (Views: 69.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:40:11 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:40:12 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:40:13 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contacts/11/detail" for 127.0.0.1 at 2017-04-22 13:40:13 -0400
+Processing by ContactsController#detail as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pdfs/11" for 127.0.0.1 at 2017-04-22 13:40:14 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPdf Load (0.8ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/what-world-needs.pdf (0.5ms)
+Completed 200 OK in 46ms (ActiveRecord: 11.6ms)
+
+

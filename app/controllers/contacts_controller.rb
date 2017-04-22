@@ -58,6 +58,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:company_id, :username, :email, :password)
+    params.require(:contact).permit(:company_id, :username, :email, :password, :image)
   end
 end

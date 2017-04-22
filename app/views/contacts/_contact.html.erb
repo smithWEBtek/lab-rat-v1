@@ -1,5 +1,7 @@
-<h1><%= contact.id %>: <%= contact.username %></h2>
+<h3><%= contact.id %>: <%= contact.username %></h3>
 <div id="body-<%= contact.id %>"><%= contact.username %> | <%= contact.email %> | <%= contact.password %></div>
+
+<img src="<%= contact.image %>">
 
 <br>
 <button class="js-username", data-id="<%= contact.id %>", data-username="<%= contact.username %>">Show username again</button>
