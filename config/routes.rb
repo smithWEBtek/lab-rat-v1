@@ -2,12 +2,10 @@ Rails.application.routes.draw do
 
   root 'tools#home'
   get '/contacts/:id/detail', to: 'contacts#detail'
-  get '/pdf/:id', to: 'pdfs#show_pdf'
   get '/import_pdfs', to: 'pdfs#import_pdfs'
   get '/download_pdf/:id', to: 'pdfs#download_pdf'
   get '/new_distill_pdf', to: 'pdfs#new_distill_pdf'
   post '/distill_pdf', to: 'pdfs#distill_pdf'
-
 
   resources :companies, :contacts, :tools, :pdfs, :docs
 

@@ -17,3 +17,8 @@
 <button class="js-liame", data-id="<%= contact.id %>", data-liame="<%= contact.email.upcase.reverse  %>">Email reversed in CAPS: </button>
 <div id="liame-<%= contact.id %>"></div>
 <hr>
+
+<button class="tune", data-id="<%= contact.id %>"><%= link_to "Show favorite tune", pdf_path(contact.id), target_blank = {target: "_blank"}
+ %></button>
+<div id="tune-<%= contact.id %>"></div>
+<hr>
