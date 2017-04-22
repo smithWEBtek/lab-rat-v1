@@ -1,5 +1,5 @@
 <h1>Edit Contact</h1>
-<%= form_for @contact do |f| %>
+<%= form_for @contact do |f| %>  
   <p>
     <%= f.label :company %>
     <%= f.collection_select :company_id, Company.all, :id, :name %>
@@ -17,6 +17,7 @@
     <%= f.text_field :password %>
   </p> 
   <p>
+    <%= f.hidden_field(:image_cache) %>
     <%= f.label :image %>
     <%= f.file_field :image %>
   </p> 
