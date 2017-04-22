@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
   root 'tools#home'
-  resources :companies, :contacts, :tools, :pdfs
+  get '/contacts/:id/detail', to: 'contacts#detail'
+  get '/pdf/:id', to: 'pdfs#show_pdf'
+  get '/import_pdfs', to: 'pdfs#import_pdfs'
+  get '/download_pdf/:id', to: 'pdfs#download_pdf'
+  get '/new_distill_pdf', to: 'pdfs#new_distill_pdf'
+  post '/distill_pdf', to: 'pdfs#distill_pdf'
 
-  get '/pdf/:id', to: 'tools#show_pdf'
-  get '/import_pdfs', to: 'tools#import_pdfs'
+
+  resources :companies, :contacts, :tools, :pdfs, :docs
+
   # get '/bookmarks', to: 'tools#bookmarks'
   # get '/test', to: 'tools#test'
-  # get '/add_pdfs', to: 'pdfs#add_pdfs'
   # get '/import_new_companies', to: 'tools#import_new_companies'
   # get '/trunc_reset', to: 'tools#trunc_reset'
 end

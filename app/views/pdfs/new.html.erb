@@ -2,12 +2,12 @@
 
 <%= form_for @pdf do |f| %>
   <p> 
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :location %>
-    <%= f.file_field :location %>  
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>  
   </p>
 <%= f.submit %>
 <% end %>

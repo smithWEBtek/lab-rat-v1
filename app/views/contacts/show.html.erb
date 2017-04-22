@@ -4,3 +4,42 @@
 <p><%= @contact.email %></p>
 <p><%= link_to @contact.company.name, company_path(@contact.company) %></p>
 
+<%= render partial: 'contacts/contact', locals: { contact: @contact }%>
+  
+<script type="text/javascript" charset="utf-8">
+$(function(){
+ 
+
+  $(".js-username").on("click", function(){
+    var id = $(this).data("id");
+    var username = $(this).data("username");
+    $.get("/contacts/" + id + "/detail", function(data) {
+      $("#username-" + id).text(username);
+    });
+  }); 
+
+  $(".js-email").on("click", function(){
+    var id = $(this).data("id");
+    var email = $(this).data("email");
+    $.get("/contacts/" + id + "/detail", function(data) {
+      $("#email-" + id).text(email);
+    });
+  }); 
+
+  $(".js-password").on("click", function(){
+    var id = $(this).data("id");
+    var password = $(this).data("pw");
+    $.get("/contacts/" + id + "/detail", function(data) {
+      $("#pw-" + id).text(password);
+    });
+  }); 
+
+  $(".js-liame").on("click", function(){
+    var id = $(this).data("id");
+    var liame = $(this).data("liame");
+    $.get("/contacts/" + id + "/detail", function(data) {
+      $("#liame-" + id).text(liame);
+    });
+  }); 
+});  
+</script>

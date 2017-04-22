@@ -10,7 +10,7 @@
 <% @contacts.each do |contact| %>
   <tr>
     <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
-    <td><%= contact.username %></td>
+    <td><%= link_to contact.username, contact_path(contact) %></td>
     <td><%= contact.email %></td>
   </tr>
 <% end %>

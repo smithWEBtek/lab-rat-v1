@@ -1,6 +1,6 @@
 class PdfsController < ApplicationController
 
-  def add_pdfs
+  def import_pdfs
     Pdf.add_pdfs
     redirect_to pdfs_path
   end
@@ -13,6 +13,29 @@ class PdfsController < ApplicationController
     @pdf = Pdf.find_by_id(params[:id])
     pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
     send_file(pdf_full_path, :filename => "@pdf.name.gsub('.pdf','')", :disposition => 'inline', :type => "application/pdf")
+    # send_file(pdf_full_path, disposition: "inline", type: "application/pdf")
+  end
+
+  def download_pdf
+    @pdf = Pdf.find_by_id(params[:id])
+    pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
+    send_file(pdf_full_path, disposition: "download", type: "application/pdf")
+  end
+
+
+  def new_distill_pdf
+    @pdf = Pdf.new 
+    @doc = Doc.new
+    render 'pdfs/distill_pdf'
+  end
+
+  def distill_pdf
+    @pdf = Pdf.find_or_create_by(name: params[:name], location: 'app/assets/pdfs/')
+    if @pdf.save
+      redirect_to pdf_path(@pdf)
+    else
+      render 'pdfs/create_pdf'
+    end
   end
 
   def new
@@ -20,9 +43,10 @@ class PdfsController < ApplicationController
   end
 
   def create
-    @pdf = Pdf.new(pdf_params)
+    @pdf = Pdf.create(pdf_params)
     if @pdf.save
       flash[:message] = 'Pdf created.'
+      binding.pry
       redirect_to pdf_path(@pdf)
     else
       render :new
@@ -53,6 +77,6 @@ class PdfsController < ApplicationController
   private
 
   def pdf_params
-    params.require(:pdf).permit(:name, :location)
+    params.require(:pdf).permit(:name, location: 'app/assets/pdfs')
   end
 end

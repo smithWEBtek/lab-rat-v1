@@ -1,4 +1,10 @@
 class ContactsController < ApplicationController
+
+  def detail
+    contact = Contact.find_by_id(params[:id])
+    render plain: contact.username
+  end
+
   def index
     @contacts = Contact.all
     # render 'contacts/index', layout: false
