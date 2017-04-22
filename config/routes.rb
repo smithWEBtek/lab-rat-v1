@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'tools#home'
   resources :companies, :contacts, :tools, :pdfs
 
+  get '/pdf/:id', to: 'tools#show_pdf'
+  get '/import_pdfs', to: 'tools#import_pdfs'
   # get '/bookmarks', to: 'tools#bookmarks'
   # get '/test', to: 'tools#test'
   # get '/add_pdfs', to: 'pdfs#add_pdfs'
