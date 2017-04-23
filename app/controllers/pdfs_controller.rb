@@ -33,6 +33,10 @@ class PdfsController < ApplicationController
 
   def index
     @pdfs = Pdf.all 
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @pdfs }
+    end
   end
 
   def show

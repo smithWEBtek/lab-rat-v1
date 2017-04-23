@@ -11,6 +11,10 @@ class ContactsController < ApplicationController
     # render 'contacts/index', layout: false
     # render layout: false
     # render json: @contacts
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @contacts }
+    end
   end
 
   def show
@@ -18,6 +22,10 @@ class ContactsController < ApplicationController
     # render 'contacts/show', layout: false
     # render layout: false
     # render json: @contact
+     respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @contact }
+    end
   end
 
   def new
