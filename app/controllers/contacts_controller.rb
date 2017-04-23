@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
-
+  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  
   def detail
     contact = Contact.find_by_id(params[:id])
     render plain: contact.username
@@ -56,6 +57,9 @@ class ContactsController < ApplicationController
   end
 
   private
+  def set_contact
+    @contact = Contact.find_by_id(params[:id])
+  end
 
   def contact_params
     params.require(:contact).permit(:company_id, :username, :email, :password, :image)

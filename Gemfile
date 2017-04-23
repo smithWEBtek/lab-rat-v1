@@ -36,12 +36,14 @@ gem 'sprockets', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
-#javascript, jquery, json
+#javascript, jquery, json, api, serializer
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'json'
+gem 'active_model_serializers'
+
 group :development do
  gem 'web-console', '>= 3.3.0'
 gem 'listen', '~> 3.0.5'

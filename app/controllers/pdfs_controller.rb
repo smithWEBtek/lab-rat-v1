@@ -12,8 +12,8 @@ class PdfsController < ApplicationController
 
   def download_pdf
     @pdf = Pdf.find_by_id(params[:id])
-    pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
-    send_file(pdf_full_path, disposition: "download", type: "application/pdf")
+    pdf_filename = Rails.root + "app/assets/pdfs/" + @pdf.name
+    send_file(pdf_filename, disposition: "download", type: "application/pdf")
   end
  
   def new_distill_pdf
@@ -37,9 +37,10 @@ class PdfsController < ApplicationController
 
   def show
     @pdf = Pdf.find_by_id(params[:id])
-    pdf_full_path = Rails.root + "app/assets/pdfs/" + @pdf.name
-    send_file(pdf_full_path, :filename => "@pdf.name.gsub('.pdf','')", :disposition => 'inline', :type => "application/pdf")
-    # send_file(pdf_full_path, disposition: "inline", type: "application/pdf")
+    pdf_filename = Rails.root + "app/assets/pdfs/" + @pdf.name
+    send_file(pdf_filename, :filename => "@pdf.name.gsub('.pdf','')", :disposition => 'inline', :type => "application/pdf")
+  # send_file(pdf_filename, disposition: "inline", type: "application/pdf")
+    # send_file(pdf_filename, :filename => "your_document.pdf", :disposition => 'inline', :type => "application/pdf")
   end
 
   def new
