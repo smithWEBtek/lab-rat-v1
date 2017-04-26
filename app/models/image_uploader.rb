@@ -15,6 +15,5 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   def public_id
     return model.short_name
-  end  
-
+  end
 end

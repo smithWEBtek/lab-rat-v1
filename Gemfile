@@ -10,7 +10,8 @@ gem 'paperclip'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'pdf-reader'
-
+gem 'rails-erd'
+ 
 #scraping
 gem 'watir'
 gem 'nokogiri', '>=1.5.9'
@@ -29,6 +30,7 @@ gem 'pry-rails'
 gem 'rails', '~> 5.0.1'
 gem 'pg'
 gem 'puma', '~> 3.0'
+gem 'yaml_db'
 
 #style
 gem "bootstrap-sass"
