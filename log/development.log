@@ -12259,3 +12259,442 @@ Processing by ContactsController#index as JSON
 Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-27 20:36:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_main_nav.html.erb (1.2ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 399ms (Views: 388.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-28 11:00:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 465ms (Views: 454.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-28 11:00:42 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (54.0ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 113ms (Views: 80.9ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-28 11:00:44 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.7ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 61ms (Views: 52.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/reset_pdfs" for 127.0.0.1 at 2017-04-28 11:00:45 -0400
+Processing by PdfsController#reset_pdfs as HTML
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pdfs" WHERE "pdfs"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 36ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-28 11:00:45 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.6ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_main_nav.html.erb (1.1ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/import_pdfs" for 127.0.0.1 at 2017-04-28 11:00:46 -0400
+Processing by PdfsController#import_pdfs as HTML
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "lucky.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lucky.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "naima.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "naima.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.5ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pick-up-pieces.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pick-up-pieces.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "pure-imagination.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "pure-imagination.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "puttin-ritz.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "puttin-ritz.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "single-petal.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "single-petal.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "summertime.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "summertime.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "superstition.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "superstition.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "valentine.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "valentine.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "verano.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "verano.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "what-world-needs.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "what-world-needs.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "who-can-i-turn-to.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "who-can-i-turn-to.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "wichita-lineman.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "wichita-lineman.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPdf Load (0.4ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."name" = $1 LIMIT $2[0m  [["name", "your-song.pdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "your-song.pdf"], ["created_at", 2017-04-28 15:00:46 UTC], ["updated_at", 2017-04-28 15:00:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/pdfs
+Completed 302 Found in 51ms (ActiveRecord: 18.0ms)
+
+
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-28 11:00:46 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pdfs/new" for 127.0.0.1 at 2017-04-28 11:00:54 -0400
+Processing by PdfsController#new as HTML
+  Rendering pdfs/new.html.erb within layouts/application
+  Rendered pdfs/new.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_main_nav.html.erb (0.8ms)
+  Rendered layouts/_admin_nav.html.erb (1.0ms)
+Completed 200 OK in 72ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pdfs" for 127.0.0.1 at 2017-04-28 11:01:35 -0400
+Processing by PdfsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vBKNEOlCPClHY92IiX5PAyq1aPJy9teAm7LR2xqF1kdXwan9KU8XhwM4c6X7i7LPcx33Wc+G68c9IsZ1BAFH5g==", "pdf"=>{"name"=>"salsa-breakdown", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f843638e318 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170428-91035-1ecyxqg.pdf>, @original_filename="salsa-breakdown2 - Full Score.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"pdf[file]\"; filename=\"salsa-breakdown2 - Full Score.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Create Pdf"}
+Unpermitted parameter: file
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pdfs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "salsa-breakdown"], ["created_at", 2017-04-28 15:01:35 UTC], ["updated_at", 2017-04-28 15:01:35 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-28 11:01:38 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.9ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+  Rendered layouts/_admin_nav.html.erb (0.6ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pdfs/15" for 127.0.0.1 at 2017-04-28 11:01:41 -0400
+Processing by PdfsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPdf Load (0.2ms)[0m  [1m[34mSELECT  "pdfs".* FROM "pdfs" WHERE "pdfs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Sent file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/salsa-breakdown (0.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /Users/BradSmith/Development/aa/lab-rat/app/assets/pdfs/salsa-breakdown):
+  
+app/controllers/pdfs_controller.rb:45:in `show'
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.0ms)
+Started GET "/pdfs" for 127.0.0.1 at 2017-04-28 11:01:47 -0400
+Processing by PdfsController#index as HTML
+  Rendering pdfs/index.html.erb within layouts/application
+  [1m[36mPdf Load (0.3ms)[0m  [1m[34mSELECT "pdfs".* FROM "pdfs"[0m
+  Rendered pdfs/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+  Rendered layouts/_admin_nav.html.erb (1.1ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-28 11:01:50 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+  Rendered layouts/_admin_nav.html.erb (0.7ms)
+Completed 200 OK in 75ms (Views: 70.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/contacts/9" for 127.0.0.1 at 2017-04-28 11:01:57 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (0.9ms)
+  Rendered contacts/show.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_main_nav.html.erb (0.6ms)
+  Rendered layouts/_admin_nav.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 61.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/contacts/9.json" for 127.0.0.1 at 2017-04-28 11:02:04 -0400
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 401 Unauthorized in 64392ms (ActiveRecord: 0.7ms)
+
+
+Completed 401 Unauthorized in 92815ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-28 11:03:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ToolsController#home as HTML
+  Rendering tools/home.html.erb within layouts/application
+  Rendered tools/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_main_nav.html.erb (1.0ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 357ms (Views: 344.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-04-28 11:03:43 -0400
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/index.html.erb within layouts/application (53.2ms)
+  Rendered layouts/_main_nav.html.erb (0.9ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 80.4ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-04-28 11:03:45 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (0.9ms)
+  Rendered contacts/show.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.4ms)
+Completed 200 OK in 66ms (Views: 60.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/contacts/10" for 127.0.0.1 at 2017-04-28 11:03:50 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (0.8ms)
+  Rendered contacts/show.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 54ms (Views: 51.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/10/edit" for 127.0.0.1 at 2017-04-28 11:03:57 -0400
+Processing by ContactsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering contacts/edit.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  Rendered contacts/edit.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_main_nav.html.erb (0.7ms)
+  Rendered layouts/_admin_nav.html.erb (0.8ms)
+Completed 200 OK in 70ms (Views: 64.5ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/contacts/10" for 127.0.0.1 at 2017-04-28 11:04:05 -0400
+Processing by ContactsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A8tSU3So15KfNESsjg3CZYd0EMsOcz2poAZQKQqIddfoGHa+tKX8PNtv6oH8+D+p3tyPYLMDAe4GlkeHFAzkdg==", "contact"=>{"company_id"=>"1", "username"=>"fred", "email"=>"fred@abc.com", "password"=>"[FILTERED]", "image_cache"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f9acbfb0320 @tempfile=#<Tempfile:/var/folders/3q/vnr7jvcn31197pdf2w75fkk00000gn/T/RackMultipart20170428-91264-1b93ybz.pdf>, @original_filename="salsa-breakdown2 - Full Score.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"contact[image]\"; filename=\"salsa-breakdown2 - Full Score.pdf\"\r\nContent-Type: application/pdf\r\n">}, "commit"=>"Update Contact", "id"=>"10"}
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Unpermitted parameter: image_cache
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "contacts" SET "image" = $1, "updated_at" = $2 WHERE "contacts"."id" = $3[0m  [["image", "fred.png"], ["updated_at", 2017-04-28 15:04:05 UTC], ["id", 10]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "contacts" SET "image" = 'image/upload/v1493391845/fred.png' WHERE "contacts"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/contacts/10
+Completed 302 Found in 2835ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/contacts/10" for 127.0.0.1 at 2017-04-28 11:04:08 -0400
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/_contact.html.erb (1.1ms)
+  Rendered contacts/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_main_nav.html.erb (1.3ms)
+  Rendered layouts/_admin_nav.html.erb (0.9ms)
+Completed 200 OK in 62ms (Views: 57.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts/10.json" for 127.0.0.1 at 2017-04-28 11:06:06 -0400
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::Attributes (4.93ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contacts/10.json" for 127.0.0.1 at 2017-04-28 11:06:08 -0400
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::Attributes (4.03ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts/10.json" for 127.0.0.1 at 2017-04-28 11:06:09 -0400
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::Attributes (3.03ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts/10.json" for 127.0.0.1 at 2017-04-28 11:06:10 -0400
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::Attributes (3.25ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts/10.json" for 127.0.0.1 at 2017-04-28 11:06:12 -0400
+Processing by ContactsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mContact Load (1.1ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ContactSerializer with ActiveModelSerializers::Adapter::Attributes (3.97ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 1.9ms)
+
+
