@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv'
+
 git_source(:github) do |repo_name|
 repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
 "https://github.com/#{repo_name}.git"
@@ -17,8 +19,6 @@ gem 'watir'
 gem 'nokogiri', '>=1.5.9'
 gem 'httparty'
 
-#enumerate e.g. admin, standard via integer in db column
-gem 'pundit'
 #user authorization
 gem 'devise'
 
@@ -31,6 +31,7 @@ gem 'rails', '~> 5.0.1'
 gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'yaml_db'
+gem 'dotenv'
 
 #style
 gem "bootstrap-sass"
@@ -47,7 +48,8 @@ gem 'json'
 gem 'active_model_serializers'
 
 group :development do
- gem 'web-console', '>= 3.3.0'
+gem 'dotenv-rails'
+gem 'web-console', '>= 3.3.0'
 gem 'listen', '~> 3.0.5'
 
 end
